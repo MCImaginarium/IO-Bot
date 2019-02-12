@@ -293,14 +293,14 @@ function radioQueue(channel){
     res.on('end',function(){
       var obj = JSON.parse(data)
       var title = obj.icestats.source.title
-        .replace(/\/storage\/resist-discord-bot\/assets\/public\/music\//g,
+        .replace(/\/storage\/bot\/assets\/public\/music\//g,
         "").replace(/__/g, " ").replace(/_/g, " ")
       console.log("Current Track { "+title+" }")
       var sys = require('util')
       var exec = require('child_process').exec
       function puts(error, stdout, stderr) { 
         var playList = stdout.replace(/.mp3/g, "")
-          .replace(/\/storage\/resist-discord-bot\/assets\/public\/music\//g, "")
+          .replace(/\/storage\/bot\/assets\/public\/music\//g, "")
           .replace(/__/g, " ").replace(/_/g, " ")
         var finalPlayList = playList.replace(title,"{ "+title+" }")
         client.channels.get(channel).send("`Displaying current radio queue...`\n```css\n"+
@@ -322,22 +322,22 @@ function radioRemove(channel){
       var obj = JSON.parse(data)
       var title = obj.icestats.source.title + ".mp3"
       var titlePretty = obj.icestats.source.title
-        .replace(/\/storage\/resist-discord-bot\/assets\/public\/music\//g, "")
+        .replace(/\/storage\/bot\/assets\/public\/music\//g, "")
         .replace(/__/g, " ").replace(/_/g, " ")
       var sys = require('util')
       var exec = require('child_process').exec
       function rmComplete() {
-        exec("find /storage/resist-discord-bot/assets/public/music | grep .mp3 > /storage/listen.m3u")
+        exec("find /storage/bot/assets/public/music | grep .mp3 > /storage/listen.m3u")
         exec("pkill -10 ices && pkill -1 ices")
       }
       function puts() { 
         client.channels.get(channel).send("`Removed "+titlePretty+" from the radio queue!`")
-        exec("find /storage/resist-discord-bot/assets/public/music | grep .mp3 > /storage/listen.m3u")
+        exec("find /storage/bot/assets/public/music | grep .mp3 > /storage/listen.m3u")
         console.log('Should have wrote a new playlist file...')
         exec("pkill -10 ices && pkill -1 ices")
         return true
       }
-      exec("rm /storage/listen.m3urm -rf /storage/resist-discord-bot/assets/public/music/"+title+"", puts())      
+      exec("rm /storage/listen.m3urm -rf /storage/bot/assets/public/music/"+title+"", puts())      
     })
   })
 }
@@ -352,7 +352,7 @@ function radioRemoveBackend(channel,player){
       var obj = JSON.parse(data)
       var title = obj.icestats.source.title + ".mp3"
       var titlePretty = obj.icestats.source.title
-        .replace(/\/storage\/resist-discord-bot\/assets\/public\/music\//g, "")
+        .replace(/\/storage\/bot\/assets\/public\/music\//g, "")
         .replace(/__/g, " ").replace(/_/g, " ")
       var sys = require('util')
       var exec = require('child_process').exec
@@ -361,7 +361,7 @@ function radioRemoveBackend(channel,player){
           " `from the radio queue`!")
         return true
       }
-      exec("rm -rf /storage/resist-discord-bot/assets/public/music/"+title, puts)
+      exec("rm -rf /storage/bot/assets/public/music/"+title, puts)
       exec("pkill -10 ices && pkill -1 ices")
       setTimeout(function () {
         radioNowPlaying(discord_channel_id_botspam)
@@ -451,8 +451,8 @@ const commands = {
       exec("UnSupported OS !!", puts)
     } else {
       var lastChannel = msg.channel.id
-      exec('echo "'+lastChannel+'" > /storage/resist-discord-bot/lastChannel')
-      exec("/storage/resist-discord-bot/reload.sh &", puts)
+      exec('echo "'+lastChannel+'" > /storage/bot/lastChannel')
+      exec("/storage/bot/reload.sh &", puts)
     } 
   })
 },'shutdown': (msg) => {
@@ -673,7 +673,7 @@ const commands = {
       msg.channel.send("`Querying game server overall health and ticks per second...` ```pre\n"+stdout+"```")
     }
   }
-  exec("/bin/bash /storage/resist-discord-bot/tps.sh | iconv -f utf-8 -t utf-8 -c", puts)
+  exec("/bin/bash /storage/bot/tps.sh | iconv -f utf-8 -t utf-8 -c", puts)
 },'download': (msg) => {
   msg.channel.send("`It's available on all platforms, get it here...`\n"+
     "https://github.com/resist-network/resist-launcher-pack/releases/latest")
@@ -700,7 +700,7 @@ const commands = {
     msg.channel.send(""+mentionCommandAuthor+" `Speed test result is complete, see attached.`\n```css\n"+
       stdout+"```") 
   }
-  exec("/storage/resist-discord-bot/speedtest.sh", puts)
+  exec("/storage/bot/speedtest.sh", puts)
 },'update': (msg) => {
   if(msg.author.id !== config.bot_admin_id) return
   msg.channel.send("`Starting update, please wait...`") 
@@ -722,7 +722,7 @@ const commands = {
       }
     })
   }
-  exec("cd /storage/resist-discord-bot/ git pull npm install", puts)
+  exec("cd /storage/bot/ git pull npm install", puts)
  },'nslookup': (msg) => {
   var mentionCommandAuthor = "<@"+msg.author.id+">"
   let host = msg.content.split(' ')[1]
@@ -787,9 +787,9 @@ const commands = {
       break
     case "wipe":
       if(msg.author.id !== config.bot_admin_id) return
-      exec("rm -rf /storage/resist-discord-bot/assets/public/music/*.mp3")
-      exec("cp -rf /storage/resist-discord-bot/assets/public/music-orig/*.mp3"+
-        " /storage/resist-discord-bot/assets/public/music/.")
+      exec("rm -rf /storage/bot/assets/public/music/*.mp3")
+      exec("cp -rf /storage/bot/assets/public/music-orig/*.mp3"+
+        " /storage/bot/assets/public/music/.")
       exec("mv /storage/listen.m3u.orig /storage/listen.m3u")
       msg.channel.send("`Wiping radio queue...`")
       radioQueue(discord_channel_id_botspam)
@@ -850,8 +850,8 @@ const commands = {
                 " radio queue!```"
             }}  
             var videoUrl = "https://www.youtube.com/watch?v="+video.id.videoId   
-            var tempDir = "/storage/resist-discord-bot/assets/public/music/temp" 
-            var musicDir = "/storage/resist-discord-bot/assets/public/music" 
+            var tempDir = "/storage/bot/assets/public/music/temp" 
+            var musicDir = "/storage/bot/assets/public/music" 
             var videoReadableStream = ytdl(videoUrl, { filter: 'audioonly'})
             ytdl.getInfo(videoUrl, function(err, info){
               var videoName = info.title.replace('|','').replace(/[^a-zA-Z0-9-_]/g, '_')
@@ -868,11 +868,11 @@ const commands = {
                     .save(mp3Path).on('end', function() {
                     fs.unlinkSync(tempFile)
                     function rmComplete() {
-                      exec("find /storage/resist-discord-bot/assets/public/music |"+
+                      exec("find /storage/bot/assets/public/music |"+
                         " grep .mp3 > /storage/listen.m3u")
                     }
                     exec("rm /storage/listen.m3u")
-                    exec("find /storage/resist-discord-bot/assets/public/music | "+
+                    exec("find /storage/bot/assets/public/music | "+
                       "grep .mp3 > /storage/listen.m3u")
                     console.log('Should have wrote a new playlist file...')
                     exec("pkill -10 ices && pkill -1 ices")                   
