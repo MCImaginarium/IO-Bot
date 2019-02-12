@@ -628,7 +628,7 @@ const commands = {
   var totalMem = prettySize(os.totalmem())
   var milliSecUp = os.uptime() * 1000
   var upTime = prettyMs(milliSecUp, {verbose: true})
-  msg.channel.send("`Querying bot node statistics...`\n```css\nMemory Usage: "+freeMem+" Free / "+totalMem+
+  msg.channel.send("`Querying bot node statistics...`\n```css\nBot Memory: "+freeMem+" Free / "+totalMem+
     " Total \nBot OS/Arch: "+os.type()+" ("+os.arch()+")\nBot Node FQDN: "+os.hostname()+
     "\nBot Node Update: "+upTime+"```")
 },'help': (msg) => {
