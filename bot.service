@@ -11,9 +11,9 @@ StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=iobot
 
-WorkingDirectory=/storage/website
-PIDFile=/storage/website/pidfile
-ExecStart=/usr/bin/env node loader.js
+WorkingDirectory=/storage/bot
+PIDFile=/storage/bot/pidfile
+ExecStart=/usr/bin/env node bot.js
 Restart=always
 
 [Install]
