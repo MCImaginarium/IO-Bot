@@ -1,4 +1,6 @@
 #!/bin/bash
-git add --all
-git commit -am "Automation, bleh!"
-git push
+cd "$(dirname "$0")"
+git add --all;
+git commit -am "Bleh... automation and stuff.";
+git push;
+

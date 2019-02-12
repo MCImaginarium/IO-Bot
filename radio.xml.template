@@ -1,0 +1,37 @@
+<ices>
+   
+     <!-- GENERIC -->
+     <background>1</background>
+     <pidfile>/var/run/icecast2/resist.pid</pidfile>
+   
+     <!-- LOGGING -->
+     <logpath>/var/log/icecast2</logpath>
+     <logfile>resist.log</logfile>
+     <logsize>2048</logsize>
+     <loglevel>4</loglevel>
+     <consolelog>0</consolelog>
+   
+     <!-- STREAM -->
+     <stream>
+       <metadata>
+         <name>ioCraft.org Radio</name>
+         <genre>Various</genre>
+         <description>Live Radio Feed in Game, Discord and on the Web. Want to play a game?</description>
+         <url>https://iocraft.org</url>
+       </metadata>
+       <input>
+         <param name="type">basic</param>
+         <param name="file">/storage/listen.m3u</param>
+         <param name="random">0</param>
+ 	 <param name="once">1</param>
+         <param name="restart-after-reread">1</param>
+       </input>
+       <instance>
+         <hostname>localhost</hostname>
+         <port>8000</port>
+         <password>RADIO_PASSWORD</password>
+         <mount>/listen.mp3</mount>
+       </instance>
+     </stream>
+   
+   </ices>
