@@ -1,3 +1,3 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-mcrcon -p MCR_PASS -H play.iocraft.org -P 25567 -c tps
+mcrcon -p MCR_PASS -H play.iocraft.org -P 25567 -c cofh tps
