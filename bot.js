@@ -670,7 +670,7 @@ const commands = {
       msg.channel.send("`Querying game server overall health and ticks per second...` ```Well, I may"+
       " be artificial, but I am far from perfect. Error!```")     
     } else {
-      msg.channel.send("`Querying game server overall health and ticks per second...` ```pre\n"+stdout.replaceAll(')',')\n')+"```")
+      msg.channel.send("`Querying game server overall health and ticks per second...` ```pre\n"+stdout.replace(/\)/g,'\)\n')+"```")
     }
   }
   exec("/bin/bash /storage/bot/tps.sh | iconv -f utf-8 -t utf-8 -c", puts)
