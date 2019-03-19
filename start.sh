@@ -33,7 +33,7 @@ fi
 
 if ! screen -list | grep -q "radio"; then
 	echo "Radio Bot was not started, starting in background!"
-        screen -LdmS radio /usr/bin/ices -c /storage/radio.conf
+        screen -LdmS radio /usr/bin/ices -c /storage/radio.xml
 else
 	echo "Radio Bot is already started, not starting!"
 fi
