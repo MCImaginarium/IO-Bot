@@ -2,6 +2,7 @@ config.json
 node_modules/
 node_modules
 package-lock.json
+assets/public/music
 assets/public/youtube/*mp3
 assets/public/youtube/*mp4
 assets/public/youtube/*m4u
@@ -10,7 +11,5 @@ assets/public/youtube/temp/*mp3
 assets/public/youtube/temp/*mp4
 assets/public/youtube/temp/*m4u
 assets/public/youtube/temp/ogg
-*.ogg
-*.mp3
 tps.sh
 mcrcon.c
