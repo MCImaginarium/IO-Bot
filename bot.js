@@ -805,7 +805,7 @@ const commands = {
           " media encoders and live radio...`")
         radioNowPlaying(discord_channel_id_botspam)
 
-        const dispatcher = connection.playStream("https://iocraft.org/listen.mp3", streamOptions)
+        const dispatcher = connection.playStream("https://radio.iocraft.org/listen.mp3", streamOptions)
         dispatcher.on("end", end => {
           console.log("Main ioCraft.org ICECAST Server has quit broadcasting!")
           client.channels.get(discord_channel_id_log).send("`Main Radio feed has quit broadcasting"+
@@ -880,7 +880,7 @@ const commands = {
                     msg.channel.send(":white_check_mark: `Added request from ` "+
                       mentionCommandAuthor+" `titled "+videoNamePretty+
                       "!`\nListen Live in **#radio**, in Game or at -> "+
-                      "https://ioCraft.org/listen.mp3")  
+                      "https://radio.ioCraft.org/listen.mp3")  
                   })             
                 })    
               }
@@ -1206,8 +1206,8 @@ client.on('ready', () => {
     client.channels.get(discord_channel_id_log).send("`Initializing the ioCraft.org media encoders and"+
       " live radio...`")
     radioNowPlaying(discord_channel_id_log)
-    const stream = ffmpeg('https://ioCraft.org/listen.mp3')
-    const dispatcher = connection.playStream("https://iocraft.org/listen.mp3", streamOptions)
+    const stream = ffmpeg('https://radio.ioCraft.org/listen.mp3')
+    const dispatcher = connection.playStream("https://radio.iocraft.org/listen.mp3", streamOptions)
     dispatcher.on("end", end => {
       console.log("Main ioCraft.org ICECAST Server has quit broadcasting!")
       client.channels.get(discord_channel_id_log).send("`Main Radio feed has quit broadcasting, check the"+
