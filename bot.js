@@ -722,7 +722,7 @@ const commands = {
       }
     })
   }
-  exec("cd /storage/bot/ git pull npm install", puts)
+  exec("/bin/sh /storage/bot/pull.sh; npm install", puts)
  },'nslookup': (msg) => {
   var mentionCommandAuthor = "<@"+msg.author.id+">"
   let host = msg.content.split(' ')[1]
