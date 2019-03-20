@@ -775,11 +775,11 @@ const commands = {
       radioRemove(discord_channel_id_botspam)   
       break
     case "nowplaying":
-      radioNowPlaying(discord_channel_id_botspam)
+      radioNowPlaying(msg.channel.id)
       break
     case "queue":
       exec("/storage/ices-start.sh pkill -1 ices")
-      radioQueue(discord_channel_id_botspam)
+      radioQueue(msg.channel.id)
       break     
     case "test":
       let testRaw = msg.content.split(' ')[2]
