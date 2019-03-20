@@ -772,7 +772,7 @@ const commands = {
       msg.channel.send("`Skipping to the next radio track!`")   
       break
     case "remove":
-      radioRemove(discord_channel_id_botspam)   
+      radioRemove(msg.channel.id)   
       break
     case "nowplaying":
       radioNowPlaying(msg.channel.id)
@@ -792,7 +792,7 @@ const commands = {
         " /storage/bot/assets/public/music/.")
       exec("mv /storage/listen.m3u.orig /storage/listen.m3u")
       msg.channel.send("`Wiping radio queue...`")
-      radioQueue(discord_channel_id_botspam)
+      radioQueue(msg.channel.id)
       msg.channel.send(":white_check_mark:  `Radio queue wipe completed!`")
       exec("pkill -10 ices && pkill -1 ices")     
       break     
