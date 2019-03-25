@@ -6,7 +6,7 @@ Our ioCraft.org Discord Bot.
 - 2G of RAM Minimum
 - Node.js v10.x+
 # Radio Requirements
-- Linux System with ICES, and IceCast2 (Source Included in this Repository)
+- Linux System with ICES, and IceCast2 (Source Included in `/externals`)
 # Resources
 Our Site: https://www.iocraft.org
 
