@@ -1,10 +1,12 @@
 ![](https://www.iocraft.org/mini.png)
 >>>>>>> # IO-Bot
 Our ioCraft.org Discord Bot.
-# Requirements
+# Basic Requirements
 - 64 Bit CPU
 - 2G of RAM Minimum
 - Node.js v10.x+
+# Radio Requirements
+- Linux System with ICES, and IceCast2 (Source Included in this Repository)
 # Resources
 Our Site: https://www.iocraft.org
 
