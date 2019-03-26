@@ -618,7 +618,7 @@ const commands = {
     " custom tweaks, recipes, and extended help topics.```\n**DOWNLOAD GAME** - **!download**\n```ldif\n"+
     "Provides the downloads for Windows, Linux and OSX players.```", {
     files: [
-    "https://iocraft.org/wp-content/uploads/2019/01/textcrop.png"
+    "https://raw.githubusercontent.com/iocraft-org/launcher/master/launcher/assets/images/textcrop.png"
   ]
   })
 },'modlist': (msg) => {
