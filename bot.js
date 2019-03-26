@@ -676,7 +676,7 @@ const commands = {
   exec("/bin/bash /storage/bot/tps.sh | iconv -f utf-8 -t utf-8 -c", puts)
 },'download': (msg) => {
   msg.channel.send("`It's available on all platforms, get it here...`\n"+
-    "https://github.com/resist-network/resist-launcher-pack/releases/latest")
+    "https://github.com/iocraft-org/launcher/releases/latest")
 },'webpage': (msg) => {
   //msg.delete(1000)
   let requestPage = msg.content.split(' ')[1]
