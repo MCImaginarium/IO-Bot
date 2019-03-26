@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-DISCORD=$(cat ~/.discord_token)
+DISCORD_TOKEN=$(cat ~/.discord_token)
 MYSQL_DATABASE=$(cat ~/.mysql_database)
 MYSQL_USER=$(cat ~/.mysql_username)
 MYSQL_PASSWORD=$(cat ~/.mysql_password)
@@ -16,7 +16,7 @@ if ! screen -list | grep -q "bot"; then
 	rm /storage/bot/config.json
 	rm /storage/bot/tps.sh
 	sed "s#MCR_PASS#$MCR_PASS#g" /storage/bot/tps.sh.template > /storage/bot/tps.sh;
-	sed "s#DISCORD_TOKEN#$DISCORD#g" /storage/bot/config.json.template > /storage/bot/config.json;
+	sed "s#DISCORD_TOKEN#$DISCORD_TOKEN#g" /storage/bot/config.json.template > /storage/bot/config.json;
 	sed -i "s/MYSQL_USERNAME/$MYSQL_USERNAME/g" /storage/bot/config.json;
 	sed -i "s/MYSQL_PASSWORD/$MYSQL_PASSWORD/g" /storage/bot/config.json;
 	sed -i "s/MYSQL_HOSTNAME/$MYSQL_HOSTNAME/g" /storage/bot/config.json;
