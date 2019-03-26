@@ -611,8 +611,7 @@ const commands = {
     " tech only survival pack. \n\nPlease check our chat channels, or visit our website at the link below"+
     " for the mod list, launcher information, connect information and much much more.```\n\nGet it Now!  "+
     "[ https://www.ioCraft.org ]\n\nJoin <#544564718849753120> for regular chat and to meet the community!\n"+
-    "Use <#560079070248042505> for general help or open a ticket.\n\n**SERVER INFORMATION**```css\nModded"+
-    " Minecraft Version { 1.7.10 }\nServer Stats { DEDICATED, 8GB RAM, SSD RAID, 4 CORE }\n```\n"+
+    "Use <#560079070248042505> for general help or open a ticket.\n\n"+
     "**OPEN A SUPPORT TICKET** - **!open**\n```ldif\nCreates a private channel and staff will assist you when"+
     " they are available.\n\nFor immediate help, check out or other channels, or check out site for various"+
     " custom tweaks, recipes, and extended help topics.```\n**DOWNLOAD GAME** - **!download**\n```ldif\n"+
