@@ -609,7 +609,7 @@ const commands = {
   msg.channel.send("`Initializing ioCraft.org...` ```prolog\nWelcome to the ioCraft.org Minecraft"+
     " Community! We host our own custom Minecraft modpack and server. Scifi, Futuristic, CyberPunk themed"+
     " tech only survival pack. \n\nPlease check our chat channels, or visit our website at the link below"+
-    " for the mod list, launcher information,\nconnect information and much much more.```\n\nGet it Now!  "+
+    " for the mod list, launcher information, connect information and much much more.```\n\nGet it Now!  "+
     "[ https://www.ioCraft.org ]\n\nJoin <#544564718849753120> for regular chat and to meet the community!\n"+
     "Use <#560079070248042505> for general help or open a ticket.\n\n**SERVER INFORMATION**```css\nModded"+
     " Minecraft Version { 1.7.10 }\nServer Stats { DEDICATED, 8GB RAM, SSD RAID, 4 CORE }\n```\n"+
