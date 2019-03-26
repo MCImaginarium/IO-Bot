@@ -2,10 +2,10 @@
 cd "$(dirname "$0")"
 DISCORD=$(cat ~/.discord_token)
 MYSQL_DATABASE=$(cat ~/.mysql_database)
-MYSQL_USER=$(cat ~/.mysql_user)
+MYSQL_USER=$(cat ~/.mysql_username)
 MYSQL_PASSWORD=$(cat ~/.mysql_password)
-MYSQL_HOST=$(cat ~/.mysql_host)
-MCR_PASS=$(cat ~/.mcr_pass)
+MYSQL_HOST=$(cat ~/.mysql_hostname)
+MCR_PASS=$(cat ~/.mcr_password)
 YOUTUBE_KEY=$(cat ~/.youtube_key)
 GOOGLE_URL=$(cat ~/.google_url)
 MONGO=$(cat ~/.mongo)
@@ -17,9 +17,9 @@ if ! screen -list | grep -q "bot"; then
 	rm /storage/bot/tps.sh
 	sed "s#MCR_PASS#$MCR_PASS#g" /storage/bot/tps.sh.template > /storage/bot/tps.sh;
 	sed "s#DISCORD_TOKEN#$DISCORD#g" /storage/bot/config.json.template > /storage/bot/config.json;
-	sed -i "s/MYSQL_USER/$MYSQL_USER/g" /storage/bot/config.json;
+	sed -i "s/MYSQL_USERNAME/$MYSQL_USERNAME/g" /storage/bot/config.json;
 	sed -i "s/MYSQL_PASSWORD/$MYSQL_PASSWORD/g" /storage/bot/config.json;
-	sed -i "s/MYSQL_HOST/$MYSQL_HOST/g" /storage/bot/config.json;
+	sed -i "s/MYSQL_HOSTNAME/$MYSQL_HOSTNAME/g" /storage/bot/config.json;
 	sed -i "s/MYSQL_DATABASE/$MYSQL_DATABASE/g" /storage/bot/config.json;
 	sed -i "s/YOUTUBE_KEY/$YOUTUBE_KEY/g" /storage/bot/config.json;
 	sed -i "s/GOOGLE_URL/$GOOGLE_URL/g" /storage/bot/config.json;
