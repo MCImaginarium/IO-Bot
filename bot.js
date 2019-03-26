@@ -533,7 +533,7 @@ const commands = {
     " without Administrative Authorization.\n\n#2 Do not assume that you are above anyone or any Rules that"+
     " Members must follow.\n\n#3 Just because you 'can' do something, doesn't mean you should.```", {
     files: [
-    "https://iocraft.org/wp-content/uploads/2019/01/textcrop.png"
+    "https://raw.githubusercontent.com/iocraft-org/launcher/master/launcher/assets/images/textcrop.png"
   ]
   })
 },'kick': (msg) => {
