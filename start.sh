@@ -12,21 +12,21 @@ MONGO=$(cat ~/.mongo)
 cd "$(dirname "$0")"
 if ! screen -list | grep -q "bot"; then
 	echo "Bot was not started, starting in background!"
-	cd /storage/bot/
-	rm /storage/bot/config.json
-	rm /storage/bot/tps.sh
-	sed "s#MCR_PASS#$MCR_PASS#g" /storage/bot/tps.sh.template > /storage/bot/tps.sh;
-	sed "s#DISCORD_TOKEN#$DISCORD_TOKEN#g" /storage/bot/config.json.template > /storage/bot/config.json;
-	sed -i "s/MYSQL_USERNAME/$MYSQL_USERNAME/g" /storage/bot/config.json;
-	sed -i "s/MYSQL_PASSWORD/$MYSQL_PASSWORD/g" /storage/bot/config.json;
-	sed -i "s/MYSQL_HOSTNAME/$MYSQL_HOSTNAME/g" /storage/bot/config.json;
-	sed -i "s/MYSQL_DATABASE/$MYSQL_DATABASE/g" /storage/bot/config.json;
-	sed -i "s/YOUTUBE_KEY/$YOUTUBE_KEY/g" /storage/bot/config.json;
-	sed -i "s/GOOGLE_URL/$GOOGLE_URL/g" /storage/bot/config.json;
+	cd /storage/IO-Bot/
+	rm /storage/IO-Bot/config.json
+	rm /storage/IO-Bot/tps.sh
+	sed "s#MCR_PASS#$MCR_PASS#g" /storage/IO-Bot/tps.sh.template > /storage/IO-Bot/tps.sh;
+	sed "s#DISCORD_TOKEN#$DISCORD_TOKEN#g" /storage/IO-Bot/config.json.template > /storage/IO-Bot/config.json;
+	sed -i "s/MYSQL_USERNAME/$MYSQL_USERNAME/g" /storage/IO-Bot/config.json;
+	sed -i "s/MYSQL_PASSWORD/$MYSQL_PASSWORD/g" /storage/IO-Bot/config.json;
+	sed -i "s/MYSQL_HOSTNAME/$MYSQL_HOSTNAME/g" /storage/IO-Bot/config.json;
+	sed -i "s/MYSQL_DATABASE/$MYSQL_DATABASE/g" /storage/IO-Bot/config.json;
+	sed -i "s/YOUTUBE_KEY/$YOUTUBE_KEY/g" /storage/IO-Bot/config.json;
+	sed -i "s/GOOGLE_URL/$GOOGLE_URL/g" /storage/IO-Bot/config.json;
 	git stash;
 	git pull;
 	#npm update;
-        screen -LdmS bot node /storage/bot/bot.js
+        screen -LdmS bot node /storage/IO-Bot/bot.js
 else
 	echo "Bot is already started, not starting!"
 fi
