@@ -465,12 +465,12 @@ const commands = {
     let host = msg.content.split(' ')[1]
     var sys = require('util')
     var exec = require('child_process').exec
-    function puts(error, stdout, stderr) { 
-      msg.channel.send("`"+stdout+"`")
+    function puts(error, stdout, stderr) {
+     msg.channel.send("`"+stdout+"`")
     }
     if (systemOS === "win32") {
     } else {
-      exec('echo "Rebooting the host system, be right back!"sudo reboot', puts)
+      exec('echo "Rebooting the host system, be right back!";sudo reboot', puts)
     }
   }
 },'purge': (msg) => {
